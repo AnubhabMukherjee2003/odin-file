@@ -35,7 +35,7 @@ A cloud-based file management system that allows users to securely store, organi
 
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/AnubhabMukherjee2003/odin-file
 cd odin-file
 ```
 
@@ -71,22 +71,3 @@ npm start
 - `npm run prisma:studio`: Launch Prisma Studio for database management
 - `npm run db:push`: Push schema changes to the database
 - `npm run db:migrate`: Create and apply migrations
-
-## Project Structure
-
-```
-odin-file/
-├── controllers/       # Route controllers
-│   ├── auth.js        # Authentication logic
-│   ├── create.js      # File/folder creation logic
-│   └── fetchDetails.js # Data retrieval logic
-├── middleware/        # Express middleware
-├── prisma/            # Database schema and migrations
-├── public/            # Static assets
-├── views/             # EJS templates
-└── app.js             # Main application entry point
-```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
