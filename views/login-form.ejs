@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport -->
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Added font preconnect -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> <!-- Added font link -->
+  <link rel="stylesheet" href="/styles.css"> <!-- Link to the new CSS file -->
+  <style>
+    /* Remove inline styles, they are now in styles.css */
+  </style>
+</head>
+<body>
+  <div class="container"> <!-- Wrap content in container -->
+    <form action="/login" method="POST">
+      <p>Welcome Back</p>
+      <% if (locals.error) { %>
+        <div class="error-message"><%= error %></div>
+      <% } %>
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit" class="button-link">Sign in</button><br>
+      <a href="/sign-up">Don't have an account? Sign up</a>
+    </form>
+
+    <div class="drops">
+      <div class="drop drop-1"></div>
+      <div class="drop drop-2"></div>
+      <div class="drop drop-3"></div>
+      <div class="drop drop-4"></div>
+      <div class="drop drop-5"></div>
+    </div>
+  </div>
+</body>
+</html>

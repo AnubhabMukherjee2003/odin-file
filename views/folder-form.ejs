@@ -1,0 +1,33 @@
+<!-- filepath: /home/arch/hikki/docss/odin-file/views/folder-form.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Folder</title> <!-- Changed title -->
+    <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Added font preconnect -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> <!-- Added font link -->
+    <link rel="stylesheet" href="/styles.css"> <!-- Link to the new CSS file -->
+</head>
+<body>
+    <div class="container"> <!-- Wrap content in container -->
+        <h1>Create a new folder</h1>
+        <form action="/folders/new" method="POST">
+            <label for="name">Folder Name</label>
+            <input id="name" name="name" placeholder="Folder Name" type="text" required />
+            <button type="submit">Create Folder</button>
+        </form>
+
+        <a href="/dashboard" class="button-link">Back to Dashboard</a> <!-- Added class -->
+
+        <!-- Add the drops for visual effect -->
+        <div class="drops">
+          <div class="drop drop-1"></div>
+          <div class="drop drop-2"></div>
+          <div class="drop drop-3"></div>
+          <div class="drop drop-4"></div>
+          <div class="drop drop-5"></div>
+        </div>
+    </div>
+</body>
+</html>

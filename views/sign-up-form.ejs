@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Create an Account</h1>
+    <form action="/sign-up" method="POST">
+      <p>Join us today</p>
+      <% if (locals.error) { %>
+        <div class="error-message"><%= error %></div>
+      <% } %>
+
+      <label for="username">Username</label>
+      <input id="username" name="username" placeholder="Enter your username" type="text" required />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" placeholder="Enter your password" type="password" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="email" placeholder="Enter your email" type="email" required />
+      
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <a href="/">Back to Home</a>
+    <a href="/login">Already have an account? Log in</a>
+
+    <!-- Add the drops for visual effect -->
+    <div class="drops">
+      <div class="drop drop-1"></div>
+      <div class="drop drop-2"></div>
+      <div class="drop drop-3"></div>
+      <div class="drop drop-4"></div>
+      <div class="drop drop-5"></div>
+    </div>
+  </div>
+</body>
+</html>

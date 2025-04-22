@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ...existing code...
+
+model User {
+  id       Int     @id @default(autoincrement())
+  username String  @unique
+  password String
+  email    String
+  folders  Folder[]
+}
+
+model Folder {
+  id       Int     @id @default(autoincrement())
+  userId   Int
+  name     String
+  user     User    @relation(fields: [userId], references: [id])
+  files    File[]
+}
+
+model File {
+  id        Int      @id @default(autoincrement())
+  folderId  Int
+  name      String
+  publicId  String   // Cloudinary public ID
+  size      Int
+  time      DateTime @default(now())
+  folder    Folder   @relation(fields: [folderId], references: [id])
+}
+
+// …existing code…
+
+// …existing code…
+
+model Session {
+  id        String   @id                         // primary key (session ID)
+  sid       String   @unique                    // session identifier
+  data      String   @db.Text                   // serialized session data
+  expiresAt DateTime                           // when to purge the session
+}

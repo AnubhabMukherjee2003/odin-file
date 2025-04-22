@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport -->
+  <title>Log In</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- Added font preconnect -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"> <!-- Added font link -->
+  <link rel="stylesheet" href="/styles.css"> <!-- Link to the new CSS file -->
+</head>
+<body>
+  <div class="container">
+    <% if (locals.user) { %>
+      <h1>Welcome, <%= user.username %>!</h1>
+      <a href="/dashboard" class="button-link">Go to Dashboard</a>
+      <a href="/logout" class="button-link">Log out</a>
+    <% } else { %>
+      <h1>Welcome to File Manager</h1>
+      <p class="welcome-text">Securely store and manage your files in the cloud.</p>
+      <div class="button-group">
+        <a href="/login" class="button-link">Log In</a>
+        <a href="/sign-up" class="button-link">Sign Up</a>
+      </div>
+    <% } %>
+    <div class="drops">
+      <div class="drop drop-1"></div>
+      <div class="drop drop-2"></div>
+      <div class="drop drop-3"></div>
+      <div class="drop drop-4"></div>
+      <div class="drop drop-5"></div>
+    </div>
+  </div>
+</body>
+</html>
